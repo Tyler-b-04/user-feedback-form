@@ -44,3 +44,34 @@ form.addEventListener("mouseout", function (event) {
   }
 });
 
+// Error reset
+ nameError.textContent = "";
+  emailError.textContent = "";
+  commentsError.textContent = "";
+
+  const nameValue = nameInput.value.trim();
+  const emailValue = emailInput.value.trim();
+  const commentsValue = commentsInput.value.trim();
+
+  let isValid = true;
+
+  if (nameValue === "") {
+    nameError.textContent = "Name is required.";
+    isValid = false;
+  }
+
+  if (emailValue === "") {
+    emailError.textContent = "Email is required.";
+    isValid = false;
+  }
+
+  if (commentsValue === "") {
+    commentsError.textContent = "Comments are required.";
+    isValid = false;
+  }
+
+  if (!isValid) {
+    return;
+  }
+
+// Feedback entry
