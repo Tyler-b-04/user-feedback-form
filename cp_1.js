@@ -22,6 +22,10 @@ commentsInput.addEventListener("input", function () {
   charCount.textContent = `Characters: ${commentsInput.value.length}`;
 });
 
+// Submit function
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+
 // Mouseover
 form.addEventListener("mouseover", function (event) {
   if (event.target.id === "user-name") {
@@ -75,3 +79,17 @@ form.addEventListener("mouseout", function (event) {
   }
 
 // Feedback entry
+ const entry = document.createElement("div");
+  entry.classList.add("feedback-entry");
+
+  entry.innerHTML = `
+    <h3>${nameValue}</h3>
+    <p><strong>Email:</strong> ${emailValue}</p>
+    <p><strong>Comments:</strong> ${commentsValue}</p>
+  `;
+
+  feedbackDisplay.appendChild(entry);
+  
+  form.reset();
+  charCount.textContent = "Characters: 0";
+  });
